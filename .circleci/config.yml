@@ -21,6 +21,7 @@ jobs:
 
       - run:
           name: "Build & Upload"
+          no_output_timeout: 60m
           command: |
                 git config --global user.email "githubuserdiwas@gmail.com"
                 git config --global user.name "diwas111"

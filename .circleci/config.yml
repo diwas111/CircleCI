@@ -21,7 +21,10 @@ jobs:
 
       - run:
           name: "Build & Upload"
-          command: bash -c "$(curl -sL https://raw.githubusercontent.com/Diwas007/OrangeFox_Recovery-Builder/master/get_fox_recovery.sh)"
+          command: |
+                git config --global user.email "githubuserdiwas@gmail.com"
+                git config --global user.name "diwas111"
+                bash -c "$(curl -sL https://raw.githubusercontent.com/Diwas007/OrangeFox_Recovery-Builder/master/get_fox_recovery.sh)"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

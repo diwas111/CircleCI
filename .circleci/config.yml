@@ -17,11 +17,11 @@ jobs:
       
       - run:
           name: "Install packages"
-          command: "bash -c "$(curl -sL https://raw.githubusercontent.com/sarthakroy2002/Scripts/main/Installation%20Scripts/android_build_env.sh)""
+          command: bash -c "$(curl -sL https://raw.githubusercontent.com/sarthakroy2002/Scripts/main/Installation%20Scripts/android_build_env.sh)"
 
       - run:
           name: "Build & Upload"
-          command: "bash -c "$(curl -sL https://raw.githubusercontent.com/Diwas007/OrangeFox_Recovery-Builder/master/get_fox_recovery.sh)""
+          command: bash -c "$(curl -sL https://raw.githubusercontent.com/Diwas007/OrangeFox_Recovery-Builder/master/get_fox_recovery.sh)"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

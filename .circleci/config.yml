@@ -5,7 +5,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
+  Recovery-Builder:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
@@ -14,13 +14,18 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
+      
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Install packages"
+          command: "bash -c "$(curl -sL https://raw.githubusercontent.com/sarthakroy2002/Scripts/main/Installation%20Scripts/android_build_env.sh)""
+
+      - run:
+          name: "Build & Upload"
+          command: "bash -c "$(curl -sL https://raw.githubusercontent.com/Diwas007/OrangeFox_Recovery-Builder/master/get_fox_recovery.sh)""
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  Recovery-Builder-workflow:
     jobs:
-      - say-hello
+      - Recovery-Builder
